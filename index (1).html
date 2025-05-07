@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Packaging Rendang</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Scan QR Label Indikator</h1>
+    <div id="reader" style="width:300px"></div>
+    <div id="quality"></div>
+    <div id="price"></div>
+
+    <!-- Indikator Kurkumin berdasarkan pH -->
+    <section id="indikator-pH" style="padding: 1rem; margin-top: 20px;">
+      <h2>Indikator Warna Kurkumin Berdasarkan pH</h2>
+      <div style="display: flex; height: 50px; border: 1px solid #333; margin-top: 10px;">
+        <div style="flex: 1; background-color: yellow;"></div>
+        <div style="flex: 0.5; background-color: orange;"></div>
+        <div style="flex: 0.75; background-color: red;"></div>
+        <div style="flex: 0.75; background-color: brown;"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 14px; margin-top: 5px;">
+        <span>pH 4.5</span>
+        <span>pH 5.5</span>
+        <span>pH 6.0</span>
+        <span>pH 6.5</span>
+        <span>pH 7.0</span>
+      </div>
+    </section>
+
+    <div id="generator">
+      <h2>Generate QR dari Nilai RGB</h2>
+      <input type="number" id="r" placeholder="R (0-255)" min="0" max="255">
+      <input type="number" id="g" placeholder="G (0-255)" min="0" max="255">
+      <input type="number" id="b" placeholder="B (0-255)" min="0" max="255">
+      <button onclick="generateQR()">Buat QR</button>
+      <canvas id="qrCanvas"></canvas>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
